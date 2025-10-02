@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The PRO</title>
   <style>
+    html {
+      scroll-behavior: smooth; /* para smooth ang scroll pag click */
+    }
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -38,13 +41,13 @@
       margin-bottom: 20px;
       color: #ffd700;
     }
-    #home img {
+    #home a img {
       width: 250px;
       border-radius: 50%;
       cursor: pointer;
       transition: transform 0.3s;
     }
-    #home img:hover {
+    #home a img:hover {
       transform: scale(1.05);
     }
     /* Portfolio Grid */
@@ -123,6 +126,7 @@
   <!-- Home -->
   <section id="home">
     <h1>THE PRO</h1>
+    <!-- CLICKABLE LOGO -->
     <a href="#portfolio">
       <img src="logo.png" alt="The PRO Logo">
     </a>
