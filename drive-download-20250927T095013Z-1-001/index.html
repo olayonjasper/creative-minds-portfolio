@@ -6,7 +6,7 @@
   <title>The PRO</title>
   <style>
     html {
-      scroll-behavior: smooth; /* para smooth ang scroll pag click */
+      scroll-behavior: smooth; /* smooth scroll effect */
     }
     body {
       margin: 0;
@@ -41,13 +41,20 @@
       margin-bottom: 20px;
       color: #ffd700;
     }
-    #home a img {
+    /* clickable logo link */
+    .logo-link {
+      display: inline-block;
+      position: relative;
+      z-index: 5;
+      text-decoration: none;
+    }
+    .logo-link img {
       width: 250px;
       border-radius: 50%;
       cursor: pointer;
       transition: transform 0.3s;
     }
-    #home a img:hover {
+    .logo-link img:hover {
       transform: scale(1.05);
     }
     /* Portfolio Grid */
@@ -127,7 +134,7 @@
   <section id="home">
     <h1>THE PRO</h1>
     <!-- CLICKABLE LOGO -->
-    <a href="#portfolio">
+    <a href="#portfolio" class="logo-link">
       <img src="logo.png" alt="The PRO Logo">
     </a>
   </section>
