@@ -3,196 +3,297 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The PRO</title>
+  <title>Creative Minds Portfolio</title>
   <style>
-    html {
-      scroll-behavior: smooth; /* smooth scroll effect */
+    @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Poppins:wght@400;600&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
     }
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom right, #4a148c, #880e4f);
-      color: white;
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
     }
+
+    /* Side Navigation */
     nav {
+      position: fixed;
+      top: 50%;
+      left: 20px;
+      transform: translateY(-50%);
       display: flex;
-      justify-content: center;
-      background: #111;
-      padding: 15px;
-      position: sticky;
-      top: 0;
-      z-index: 10;
+      flex-direction: column;
+      gap: 20px;
+      z-index: 1000;
     }
+
     nav a {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       color: white;
+      font-size: 22px;
       text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
+      transition: all 0.4s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
+
     nav a:hover {
-      color: #ffd700;
+      background: #ffcc00;
+      color: #333;
+      transform: scale(1.2) rotate(15deg);
+      box-shadow: 0 0 15px #ffcc00;
     }
+
+    /* General Section Styles */
     section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
       text-align: center;
-      padding: 50px 20px;
+      transition: all 0.8s ease-in-out;
+    }
+
+    /* Slide 1 - Home */
+    #home {
+      background: linear-gradient(135deg, #1d2671, #c33764);
     }
     #home h1 {
-      font-size: 50px;
+      font-family: 'Merriweather', serif;
+      font-size: 3rem;
       margin-bottom: 20px;
-      color: #ffd700;
+      animation: fadeInDown 1s ease;
+      color: #ffeb3b;
     }
-    /* clickable logo link */
-    .logo-link {
-      display: inline-block;
-      position: relative;
-      z-index: 5;
-      text-decoration: none;
-    }
-    .logo-link img {
-      width: 250px;
+    #home img {
+      width: 220px;
+      height: 220px;
       border-radius: 50%;
-      cursor: pointer;
-      transition: transform 0.3s;
+      border: 5px solid #fff;
+      object-fit: cover;
+      margin-bottom: 20px;
+      transition: transform 0.4s ease;
     }
-    .logo-link img:hover {
-      transform: scale(1.05);
+    #home img:hover {
+      transform: scale(1.15);
+      box-shadow: 0 0 20px #fff;
     }
-    /* Portfolio Grid */
-    #portfolio {
-      background: #f9f9f9;
-      color: black;
-      padding: 50px 20px;
+    #home .intro {
+      max-width: 700px;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      background: rgba(255,255,255,0.1);
+      padding: 20px;
+      border-radius: 12px;
+      border: 2px solid rgba(255,255,255,0.3);
+      animation: fadeInUp 1.5s ease;
+      text-align: left;
     }
-    #portfolio h2 {
-      margin-bottom: 30px;
+
+    /* Bullet & Highlight */
+    .intro ul {
+      list-style-type: disc;
+      margin-left: 20px;
     }
-    .portfolio {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      padding: 0 10px;
+    .highlight-pro {
+      color: yellow;
+      font-weight: bold;
+      padding: 2px 6px;
+      border-radius: 5px;
     }
-    .item {
-      position: relative;
-      overflow: hidden;
-      border-radius: 10px;
+
+    /* Slide 2 - Members */
+    #members {
+      background: linear-gradient(135deg, #1d2671, #c337a2);
     }
-    .item img {
+    .members-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .member-card {
+      width: 250px;
+      height: 400px;
+      padding: 15px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 2px solid rgba(255,255,255,0.3);
+    }
+    .member-card:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 0 20px #00f7ff;
+    }
+    .member-card img {
       width: 100%;
-      height: auto;
-      display: block;
-      transition: transform 0.5s ease;
+      height: 250px;
+      border-radius: 10px;
+      margin-bottom: 12px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
     }
-    .item:hover img {
+    .member-card img:hover {
       transform: scale(1.1);
     }
-    .overlay {
-      position: absolute;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.6);
-      color: white;
-      width: 100%;
-      text-align: center;
-      padding: 15px;
-      font-weight: bold;
+    .member-card h3 {
+      font-family: 'Merriweather', serif;
     }
-    /* Members */
-    #members {
-      background: #222;
+    .member-card p {
+      margin: 5px 0;
     }
-    #members h2 {
-      color: #ffd700;
-      margin-bottom: 20px;
-    }
+
+    /* Slide 3 - Info */
     #about {
-      background: #333;
+      background: linear-gradient(135deg, #1d2671, #a5c337);
     }
+    #about .bio {
+      max-width: 800px;
+      background: rgba(0,0,0,0.4);
+      padding: 25px;
+      border-radius: 12px;
+      font-size: 1.2rem;
+      line-height: 1.8;
+      border: 2px solid rgba(255,255,255,0.3);
+      animation: fadeIn 1.5s ease;
+    }
+
+    /* Slide 4 - Contact */
     #contact {
-      background: #111;
+      background: linear-gradient(135deg, #114e99, #ef38ca);
     }
-    footer {
-      background: #000;
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
-      color: gray;
+    #contact .contact-box {
+      background: rgba(255,255,255,0.2);
+      padding: 25px 40px;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+      border: 2px solid rgba(255,255,255,0.4);
+      animation: fadeInUp 1.5s ease;
+    }
+    #contact h2 {
+      margin-bottom: 20px;
+      font-family: 'Merriweather', serif;
+    }
+    #contact p {
+      margin: 8px 0;
+      font-size: 1.2rem;
+    }
+    #contact a {
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+    #contact a:hover {
+      color: yellow;
+      text-shadow: 0 0 10px #fff;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    @keyframes fadeInUp {
+      from {opacity: 0; transform: translateY(40px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    @keyframes fadeInDown {
+      from {opacity: 0; transform: translateY(-40px);}
+      to {opacity: 1; transform: translateY(0);}
     }
   </style>
 </head>
 <body>
 
-  <!-- Navigation -->
+  <!-- Side Navigation -->
   <nav>
-    <a href="#home">Home</a>
-    <a href="#portfolio">Portfolio</a>
-    <a href="#members">Members</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
+    <a href="#home">🏠</a>
+    <a href="#members">👥</a>
+    <a href="#about">ℹ️</a>
+    <a href="#contact">📞</a>
   </nav>
 
-  <!-- Home -->
+  <!-- Slide 1 - Home -->
   <section id="home">
     <h1>THE PRO</h1>
-    <!-- CLICKABLE LOGO -->
-    <a href="#portfolio" class="logo-link">
-      <img src="logo.png" alt="The PRO Logo">
-    </a>
+    <img src="drive-download-20250927T095013Z-1-001/group.jpg" alt="Group Photo">
+    <div class="intro">
+      <ul>
+        <li>
+          "We bring professional skills and creativity together to deliver meaningful results. 
+          Our mission is torn ideas into impactful solutions with a true 
+          <span class="highlight-pro">PRO</span> mindset"
+        </li>
+      </ul>
+    </div>
   </section>
 
-  <!-- Portfolio -->
-  <section id="portfolio">
-    <h2>My Works</h2>
-    <div class="portfolio">
-      <div class="item">
-        <img src="photos/work1.jpg" alt="Work 1">
-        <div class="overlay">Personal Work: Shoot & Edit</div>
+  <!-- Slide 2 - Members -->
+  <section id="members">
+    <h2>The <span class="highlight-pro">PRO</span> Profiles</h2>
+    <div class="members-container">
+      <div class="member-card">
+        <img src="drive-download-20250927T095013Z-1-001/1.jpg" alt="Member 1">
+        <h3>Honey Jane Panogaling</h3>
+        <p>Project Manager</p>
+        <p>hfuihfishfui</p>
       </div>
-      <div class="item">
-        <img src="photos/work2.jpg" alt="Work 2">
-        <div class="overlay">Freelance Work: Shoot & Edit</div>
+      <div class="member-card">
+        <img src="drive-download-20250927T095013Z-1-001/2.jpg" alt="Member 2">
+        <h3>Rica Mae Rojas</h3>
+        <p>Graphic Designer</p>
+        <p>cudhfiudhsf</p>
       </div>
-      <div class="item">
-        <img src="photos/work3.jpg" alt="Work 3">
-        <div class="overlay">Outsource: Video Editing</div>
-      </div>
-      <div class="item">
-        <img src="photos/work4.jpg" alt="Work 4">
-        <div class="overlay">Layout / Graphic Design</div>
-      </div>
-      <div class="item">
-        <img src="photos/work5.jpg" alt="Work 5">
-        <div class="overlay">Photography</div>
-      </div>
-      <div class="item">
-        <img src="photos/work6.jpg" alt="Work 6">
-        <div class="overlay">Screengrab & Thumbnail</div>
+      <div class="member-card">
+        <img src="drive-download-20250927T095013Z-1-001/3.jpg" alt="Member 3">
+        <h3>Jasper Olayon</h3>
+        <p>Copywriter</p>
+        <p>ashhdfuiehfhf</p>
       </div>
     </div>
   </section>
 
-  <!-- Members -->
-  <section id="members">
-    <h2>Our Members</h2>
-    <p>Meet the talented team behind THE PRO.</p>
-  </section>
-
-  <!-- About -->
+  <!-- Slide 3 - Info -->
   <section id="about">
-    <h2>About Us</h2>
-    <p>We are passionate creatives specializing in video editing, photography, and design.</p>
+    <div class="bio">
+      <p>
+        <strong>Creative Minds</strong> is more than just a group.  
+        We are dreamers, builders, and problem-solvers who blend design with code.  
+        Each project is a reflection of our dedication to making ideas come alive.  
+        Our team’s strength lies in trust, collaboration, and passion for innovation.
+      </p>
+    </div>
   </section>
 
-  <!-- Contact -->
+  <!-- Slide 4 - Contact -->
   <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: theproteam@email.com</p>
-    <p>Follow us on social media for updates.</p>
+    <h2>The <span class="highlight-pro">PRO</span> Contacts</h2>
+    <div class="contact-box">
+      <h2>Contact Us</h2>
+      <p>Panogaling: <a href="tel:+639518798840">0951-879-98840</a></p>
+      <p>Email: <a href="mailto:panogalinghoneyjane@gmail.com">panogalinghoneyjane@gmail.com</a></p>
+      <p>Rojas: <a href="tel:+639234567890">0956-568-9390</a></p>
+      <p>Email: <a href="mailto:creativeminds@example.com">creativeminds@example.com</a></p>
+      <p>Olayon: <a href="tel:+639345678901">0934-567-8901</a></p>
+      <p>Email: <a href="mailto:creativeminds@example.com">creativeminds@example.com</a></p>
+    </div>
   </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 THE PRO. All rights reserved.</p>
-  </footer>
 
 </body>
 </html>
