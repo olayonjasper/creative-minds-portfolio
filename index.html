@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Creative Mind</title>
+  <title>THE PRO</title>
   <style>
     * {margin: 0; padding: 0; box-sizing: border-box;}
 
@@ -21,26 +21,92 @@
       text-align: center;
       color: white;
       flex-direction: column;
+      padding: 20px;
     }
 
     /* Slide 1 - Home */
     #home {
       background: linear-gradient(135deg, #1d2671, #c337a2);
     }
+    #home h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+    #home img {
+      max-width: 350px;
+      border-radius: 15px;
+      margin-bottom: 20px;
+    }
+    #home .intro {
+      max-width: 800px;
+      font-size: 1.3rem;
+      line-height: 1.8;
+      background: rgba(0,0,0,0.4);
+      padding: 20px;
+      border-radius: 12px;
+    }
+    .highlight-pro {
+      color: #ffd700;
+      font-weight: bold;
+    }
 
     /* Slide 2 - Members */
     #members {
       background: linear-gradient(135deg, #1d2671, #c337a2);
+    }
+    #members h2 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+    }
+    .members-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      width: 100%;
+    }
+    .member-card {
+      background: rgba(0,0,0,0.4);
+      border-radius: 12px;
+      padding: 20px;
+      transition: 0.3s;
+    }
+    .member-card:hover { transform: scale(1.05); }
+    .member-card img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 10px;
+    }
+    .member-card h3 {
+      font-size: 1.4rem;
+      margin: 10px 0;
     }
 
     /* Slide 3 - About */
     #about {
       background: linear-gradient(135deg, #1d2671, #a5c337);
     }
+    #about .bio {
+      max-width: 800px;
+      background: rgba(0,0,0,0.4);
+      padding: 25px;
+      border-radius: 12px;
+      font-size: 1.2rem;
+      line-height: 1.8;
+      border: 2px solid rgba(255,255,255,0.3);
+    }
 
     /* Slide 4 - Contact */
     #contact {
       background: linear-gradient(135deg, #1d2671, #c337a2);
+    }
+    #contact h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    #contact .info {
+      font-size: 1.3rem;
+      margin: 10px 0;
     }
 
     /* Navbar */
@@ -62,55 +128,6 @@
       transition: 0.3s;
     }
     nav a:hover { color: #ffd700; }
-
-    /* Section titles */
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 20px;
-    }
-    p {
-      font-size: 1.2rem;
-      max-width: 800px;
-    }
-
-    /* Members grid */
-    .members-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      max-width: 1000px;
-      width: 90%;
-    }
-    .member {
-      background: rgba(0,0,0,0.4);
-      border-radius: 12px;
-      padding: 20px;
-      transition: 0.3s;
-    }
-    .member:hover { transform: scale(1.05); }
-    .member img {
-      width: 100%;
-      border-radius: 12px;
-      margin-bottom: 10px;
-    }
-    .member h2 { font-size: 1.4rem; margin: 10px 0; }
-
-    /* About bio box */
-    #about .bio {
-      max-width: 800px;
-      background: rgba(0,0,0,0.4);
-      padding: 25px;
-      border-radius: 12px;
-      font-size: 1.2rem;
-      line-height: 1.8;
-      border: 2px solid rgba(255,255,255,0.3);
-    }
-
-    /* Contact */
-    #contact .info {
-      font-size: 1.3rem;
-      margin: 10px 0;
-    }
   </style>
 </head>
 <body>
@@ -124,33 +141,40 @@
 
   <!-- Home Section -->
   <section id="home">
-    <h1>Creative Mind</h1>
-    <p>Welcome to our portfolio site. Creativity. Passion. Excellence.</p>
+    <h1>THE PRO</h1>
+    <img src="group.jpg" alt="Group Photo">
+    <div class="intro">
+      <ul>
+        <li>
+          "We bring professional skills and creativity together to deliver meaningful results. 
+          Our mission is to turn ideas into impactful solutions with a true 
+          <span class="highlight-pro">PRO</span> mindset."
+        </li>
+      </ul>
+    </div>
   </section>
 
   <!-- Members Section -->
   <section id="members">
-    <h1>Members</h1>
-    <div class="members-grid">
-      <div class="member">
-        <img src="1.jpg" alt="Member 1">
-        <h2>Member 1</h2>
-        <p>Videographer / Editor</p>
+    <h2>"The <span class="highlight-pro">PRO</span> Profiles"</h2>
+    <div class="members-container">
+      <div class="member-card">
+        <img src="1.jpg" alt="Honey Jane Panogaling">
+        <h3>Honey Jane Panogaling</h3>
+        <p>Project Manager</p>
+        <p>hfuihfishfui</p>
       </div>
-      <div class="member">
-        <img src="2.jpg" alt="Member 2">
-        <h2>Member 2</h2>
-        <p>Photographer</p>
+      <div class="member-card">
+        <img src="2.jpg" alt="Rica Mae Rojas">
+        <h3>Rica Mae Rojas</h3>
+        <p>Graphic Designer</p>
+        <p>cudhfiudhsf</p>
       </div>
-      <div class="member">
-        <img src="3.jpg" alt="Member 3">
-        <h2>Member 3</h2>
-        <p>Creative Director</p>
-      </div>
-      <div class="member">
-        <img src="group.jpg" alt="Group">
-        <h2>Our Team</h2>
-        <p>Passionate creators united.</p>
+      <div class="member-card">
+        <img src="3.jpg" alt="Jasper Olayon">
+        <h3>Jasper Olayon</h3>
+        <p>Copywriter</p>
+        <p>ashhdfuiehfhf</p>
       </div>
     </div>
   </section>
@@ -159,14 +183,14 @@
   <section id="about">
     <h1>About Us</h1>
     <div class="bio">
-      We are Creative Mind — a creative group dedicated to bringing ideas to life through photo, video, and design. With passion, skills, and vision, we aim to inspire and make an impact in every project we create.
+      We are <span class="highlight-pro">THE PRO</span> — a creative team dedicated to bringing ideas to life through photo, video, and design. With passion, skills, and vision, we aim to inspire and make an impact in every project we create.
     </div>
   </section>
 
   <!-- Contact Section -->
   <section id="contact">
-    <h1>Contact</h1>
-    <p class="info">📧 creativemind@email.com</p>
+    <h2>Contact</h2>
+    <p class="info">📧 thepro@email.com</p>
     <p class="info">📍 Cebu, Philippines</p>
   </section>
 </body>
