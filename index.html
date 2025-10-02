@@ -1,107 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Creative Minds Portfolio</title>
+  <title>Creative Mind</title>
   <style>
-    body {
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+
+    body, html {
+      height: 100%;
       font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #3b0dab, #8e44ad);
-      margin: 0;
-      padding: 20px;
+      scroll-behavior: smooth;
+    }
+
+    section {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
       color: white;
+      flex-direction: column;
     }
 
-    h1 {
-      margin-bottom: 20px;
+    /* Slide 1 - Home */
+    #home {
+      background: linear-gradient(135deg, #1d2671, #c337a2);
     }
 
-    .group-photo img {
-      width: 300px;
-      border-radius: 10px;
-      margin-bottom: 30px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    /* Slide 2 - Members */
+    #members {
+      background: linear-gradient(135deg, #1d2671, #c337a2);
     }
 
-    .profiles {
+    /* Slide 3 - About */
+    #about {
+      background: linear-gradient(135deg, #1d2671, #a5c337);
+    }
+
+    /* Slide 4 - Contact */
+    #contact {
+      background: linear-gradient(135deg, #1d2671, #c337a2);
+    }
+
+    /* Navbar */
+    nav {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
+      background: rgba(0,0,0,0.6);
+      padding: 15px;
+      z-index: 1000;
+    }
+    nav a {
+      color: white;
+      margin: 0 20px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    nav a:hover { color: #ffd700; }
+
+    /* Section titles */
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 1.2rem;
+      max-width: 800px;
+    }
+
+    /* Members grid */
+    .members-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 20px;
+      max-width: 1000px;
+      width: 90%;
     }
-
-    .profile-card {
-      background: rgba(255,255,255,0.1);
-      padding: 20px;
+    .member {
+      background: rgba(0,0,0,0.4);
       border-radius: 12px;
-      width: 240px;
-      text-align: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      transition: transform 0.3s;
+      padding: 20px;
+      transition: 0.3s;
     }
-
-    .profile-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .profile-card img {
+    .member:hover { transform: scale(1.05); }
+    .member img {
       width: 100%;
-      height: auto;
       border-radius: 12px;
       margin-bottom: 10px;
     }
+    .member h2 { font-size: 1.4rem; margin: 10px 0; }
 
-    h3 {
-      margin: 8px 0 5px;
-      color: #fff;
+    /* About bio box */
+    #about .bio {
+      max-width: 800px;
+      background: rgba(0,0,0,0.4);
+      padding: 25px;
+      border-radius: 12px;
+      font-size: 1.2rem;
+      line-height: 1.8;
+      border: 2px solid rgba(255,255,255,0.3);
     }
 
-    p {
-      margin: 3px 0;
-      color: #eee;
-    }
-
-    .quote {
-      font-style: italic;
-      font-size: 0.9em;
-      color: #ddd;
+    /* Contact */
+    #contact .info {
+      font-size: 1.3rem;
+      margin: 10px 0;
     }
   </style>
 </head>
 <body>
-  <h1>The <span style="color:yellow">PRO</span> Profiles</h1>
+  <!-- Navbar -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#members">Members</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-  <!-- Group Photo -->
-  <div class="group-photo">
-    <img src="group.jpg" alt="Group Photo">
-  </div>
+  <!-- Home Section -->
+  <section id="home">
+    <h1>Creative Mind</h1>
+    <p>Welcome to our portfolio site. Creativity. Passion. Excellence.</p>
+  </section>
 
-  <!-- Profiles -->
-  <div class="profiles">
-
-    <div class="profile-card">
-      <img src="1.jpg" alt="Honey Jane Panogaling">
-      <h3>Honey Jane Panogaling</h3>
-      <p>Project Manager</p>
-      <p class="quote">"Turning plans into progress, one step at a time."</p>
+  <!-- Members Section -->
+  <section id="members">
+    <h1>Members</h1>
+    <div class="members-grid">
+      <div class="member">
+        <img src="1.jpg" alt="Member 1">
+        <h2>Member 1</h2>
+        <p>Videographer / Editor</p>
+      </div>
+      <div class="member">
+        <img src="2.jpg" alt="Member 2">
+        <h2>Member 2</h2>
+        <p>Photographer</p>
+      </div>
+      <div class="member">
+        <img src="3.jpg" alt="Member 3">
+        <h2>Member 3</h2>
+        <p>Creative Director</p>
+      </div>
+      <div class="member">
+        <img src="group.jpg" alt="Group">
+        <h2>Our Team</h2>
+        <p>Passionate creators united.</p>
+      </div>
     </div>
+  </section>
 
-    <div class="profile-card">
-      <img src="2.jpg" alt="Rica Mae Rojas">
-      <h3>Rica Mae Rojas</h3>
-      <p>Graphic Designer</p>
-      <p class="quote">"Design is not what it looks like, it’s how it feels."</p>
+  <!-- About Section -->
+  <section id="about">
+    <h1>About Us</h1>
+    <div class="bio">
+      We are Creative Mind — a creative group dedicated to bringing ideas to life through photo, video, and design. With passion, skills, and vision, we aim to inspire and make an impact in every project we create.
     </div>
+  </section>
 
-    <div class="profile-card">
-      <img src="3.jpg" alt="Jasper Olayon">
-      <h3>Jasper Olayon</h3>
-      <p>Copywriter</p>
-      <p class="quote">"Words that connect, stories that inspire."</p>
-    </div>
-
-  </div>
+  <!-- Contact Section -->
+  <section id="contact">
+    <h1>Contact</h1>
+    <p class="info">📧 creativemind@email.com</p>
+    <p class="info">📍 Cebu, Philippines</p>
+  </section>
 </body>
 </html>
